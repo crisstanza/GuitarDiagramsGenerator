@@ -1,0 +1,4 @@
+.flip {
+	transition: transform 0.2s;
+	transform: rotateY(360deg);
+}

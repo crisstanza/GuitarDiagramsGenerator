@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guitar Diagrams - Fretboard Positions Generator</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/a.css?v=1.0.0" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/css.css?v=1.0.0" />
+		<script src="js/io.github.crisstanza.GuitarDiagramsGenerator.js?v=1.0.0"></script>
+		<script src="js/js.js?v=1.0.0"></script>
+	</head>
+	<body>
+		<h1>Gerador:</h1>
+		<label>
+			<label>Cordas:</label>
+			<span class="checks">
+				<label><input type="radio" name="strings" value="4" /> 4</label>
+				<label><input type="radio" name="strings" value="6" checked="checked" /> 6</label><br />
+			</span>
+		</label>
+		<br />
+		<label>
+			<label>Nome:</label><input type="text" name="name" value="C9" /> <input class="small" type="number" name="variation" value="" /><br />
+			<script>document.querySelector('input[type=text][name=name]').focus();</script>
+		</label>
+		<label>
+			<label>Posi&ccedil;&otilde;es:</label><input type="text" name="positions" value="8-7-0-0-8-8" /><br />
+		</label>
+		<label>
+			<label>M&atilde;o Esquerda:</label><input type="text" name="leftHand" value="2-1-0-0-3-4" /><br />
+		</label>
+		<label>
+			<label>M&atilde;o Direita:</label><input type="text" name="rightHand" value="P-P-P-I-M-A" /><br />
+		</label>
+		<br />
+		<br />
+		<div class="display" data-chord="" data-variation="" data-positions="" data-leftHand="" data-rightHand="" data-download="true"></div><br />
+		<br />
+		<hr />
+		<br />
+		<h1>Arranjos:</h1>
+		<ul>
+			<li><a href="arranjos/geni-e-o-zepelim_simplificado/">Geni e o Zepelim (Chico Buarque) - simplificado</a></li>
+		</ul>
+	</body>
+</html>
