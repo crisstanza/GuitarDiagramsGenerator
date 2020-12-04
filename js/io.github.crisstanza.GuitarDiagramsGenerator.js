@@ -49,9 +49,24 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 
 	let CHORDS = {
 		'geni-e-o-zepelim_simplificado': {
-			'Cm9': {
-				'1': {'positions': 'x-3-x-x-x-x', 'leftHand': 'x-3-x-x-x-x', 'rightHand': 'x-P-x-I-M-x'}
-			}
+			'Cm9':   { '1': {'positions': 'x-3-x-0-3-x', 'leftHand': 'x-3-x-x-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'Fm6/C': { '1': {'positions': 'x-3-x-1-3-x', 'leftHand': 'x-3-x-1-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'G7/B': { '1': {'positions': 'x-2-x-0-3-x', 'leftHand': 'x-1-x-x-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'G7': { '1': {'positions': '3-x-3-4-x-x', 'leftHand': '1-x-2-3-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+
+			'Bb7': { '1': {'positions': '6-x-6-7-x-x', 'leftHand': '1-x-2-3-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'Eb/G': { '1': {'positions': '3-x-1-3-x-x', 'leftHand': '3-x-1-4-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'Cm/G': { '1': {'positions': '3-x-1-0-x-x', 'leftHand': '3-x-1-x-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'Am7(b5)': { '1': {'positions': 'x-0-5-5-x-x', 'leftHand': 'x-x-2-3-x-x', 'rightHand': 'x-P-I-M-x-x'} },
+			'Ab7(#11)': { '1': {'positions': '4-x-4-5-x-x', 'leftHand': '1-x-2-3-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'Gm7': { '1': {'positions': '3-x-3-3-x-x', 'leftHand': '1-x-2-3-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'Eb7M/G': { '1': {'positions': '3-x-0-3-x-x', 'leftHand': '2-x-x-3-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+
+			'C':   { '1': {'positions': 'x-3-x-0-1-x', 'leftHand': 'x-3-x-x-1-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'G7(4)': { '1': {'positions': '3-x-3-5-x-x', 'leftHand': '1-x-2-4-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'A7': { '1': {'positions': 'x-0-x-0-2-x', 'leftHand': 'x-x-x-x-1-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'D7/A': { '1': {'positions': 'x-0-x-2-1-x', 'leftHand': 'x-x-x-2-1-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'Cm7/G': { '1': {'positions': '3-x-x-3-4-x', 'leftHand': '1-x-x-2-3-x', 'rightHand': 'P-x-x-I-M-x'} }
 		}
 	};
 
