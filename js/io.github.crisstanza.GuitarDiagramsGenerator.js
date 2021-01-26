@@ -67,12 +67,40 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 			'A7': { '1': {'positions': 'x-0-x-0-2-x', 'leftHand': 'x-x-x-x-1-x', 'rightHand': 'x-P-x-I-M-x'} },
 			'D7/A': { '1': {'positions': 'x-0-x-2-1-x', 'leftHand': 'x-x-x-2-1-x', 'rightHand': 'x-P-x-I-M-x'} },
 			'Cm7/G': { '1': {'positions': '3-x-x-3-4-x', 'leftHand': '1-x-x-2-3-x', 'rightHand': 'P-x-x-I-M-x'} }
+		},
+
+		'injuriado_simplificado': {
+			'E7M(9)': { '1': {'positions': 'x-7-x-8-7-x', 'leftHand': 'x-2-x-4-3-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'G#7/D#': { '1': {'positions': 'x-6-x-7-5-x', 'leftHand': 'x-3-x-4-1-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'C#m7': { '1': {'positions': 'x-4-x-4-5-x', 'leftHand': 'x-1-x-2-3-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'Bm6': { '1': {'positions': '7-x-x-7-7-x', 'leftHand': '2-x-x-3-4-x', 'rightHand': 'P-x-x-I-M-x'} },
+			'Em6(9)/B': { '1': {'positions': '7-x-5-6-x-x', 'leftHand': '3-x-1-2-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'Em7(9)/B': { '1': {'positions': '7-x-5-7-x-x', 'leftHand': '3-x-1-4-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'G#7/B#': { '1': {'positions': '8-x-6-8-x-x', 'leftHand': '3-x-1-4-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+			'G#7(#5)/B#': { '1': {'positions': '8-x-6-9-x-x', 'leftHand': '3-x-1-4-x-x', 'rightHand': 'P-x-I-M-x-x'} },
+
+			'Bm6/D': { '1': {'positions': 'x-5-x-4-7-x', 'leftHand': 'x-2-x-1-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'C#7': { '1': {'positions': 'x-4-x-4-6-x', 'leftHand': 'x-1-x-2-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'A7M/C#': { '1': {'positions': 'x-4-x-2-5-x', 'leftHand': 'x-3-x-1-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'Am6/C': { '1': {'positions': 'x-3-x-2-5-x', 'leftHand': 'x-2-x-1-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'E7M(9)/B': { '1': {'positions': 'x-2-x-1-4-x', 'leftHand': 'x-2-x-1-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'Bb7(#11)': { '1': {'positions': 'x-1-x-1-4-x', 'leftHand': 'x-1-x-1-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'A7M': { '1': {'positions': 'x-0-x-1-2-x', 'leftHand': 'x-0-x-1-2-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'B7(b9)': { '1': {'positions': 'x-2-x-2-1-x', 'leftHand': 'x-2-x-3-1-x', 'rightHand': 'x-P-x-I-M-x'} },
+
+			'Am6': { '1': {'positions': 'x-0-x-5-5-x', 'leftHand': 'x-0-x-3-4-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'F#/A#': { '1': {'positions': '6-x-x-6-7-x', 'leftHand': '2-x-x-3-4-x', 'rightHand': 'P-x-x-I-M-x'} },
+			'F#m/A': { '1': {'positions': '5-x-x-6-7-x', 'leftHand': '1-x-x-3-4-x', 'rightHand': 'P-x-x-I-M-x'} },
+			'E/G#': { '1': {'positions': '0-x-x-4-5-x', 'leftHand': '0-x-x-2-3-x', 'rightHand': 'x-P-x-I-M-x'} },
+
+			'C#/B': { '1': {'positions': 'x-2-x-1-2-x', 'leftHand': 'x-2-x-1-3-x', 'rightHand': 'x-P-x-I-M-x'} },
+			'A#m7(b5)': { '1': {'positions': '6-x-x-6-5-x', 'leftHand': '2-x-x-3-1-x', 'rightHand': 'P-x-x-I-M-x'} }
 		}
 	};
 
 	let ROMANS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 
-	let WIDTH = 149;
+	let WIDTH = 155;
 	let HEIGHT = 235;
 	let PADDING = 12;
 	let STRINGS = 6;
@@ -117,7 +145,7 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 		}
 		let y1 = textName.getBBox().y + textName.getBBox().height + PADDING*2;
 		let y2 = y1 + STRING_HEIGHT;
-		let x = PADDING + (WIDTH - (STRINGS - 1)*STRINGS_DISTANCE)/2;
+		let x = 2 + PADDING + (WIDTH - (STRINGS - 1)*STRINGS_DISTANCE)/2;
 		for (let i = 0 ; i < STRINGS ; i++) {
 			let line = ElementsCreator.create.svg('line', {x1: x + i*STRINGS_DISTANCE, y1: y1, x2: x + i*STRINGS_DISTANCE, y2: y2, stroke: 'black', 'stroke-width': 1}, svg);
 		}
@@ -137,9 +165,15 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 			}
 			let leftHand = dataLeftHand ? dataLeftHand.split('-') : null;
 			let rightHand = dataRightHand ? dataRightHand.split('-') : null;
+			let firstPositionIndex = -1;
+			let firstPosition = -1;
 			for (let i = 0 ; i < positions.length ; i++) {
 				let position = positions[i];
 				let positionIndex = (position == 'x' ? -1 : position - 1 - delta);
+				if (firstPositionIndex == -1 && position != 'x') {
+					firstPositionIndex = positionIndex;
+					firstPosition = position - 1;
+				}
 				let leftFinger = leftHand ? leftHand[i] : null;
 				let rightFinger = rightHand ? rightHand[i] : null;
 				if (position >= 0) {
@@ -151,13 +185,13 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 						ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt'}, svg, leftFinger);
 					}
 				} else if (position == 'x') {
-					ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt', 'font-weight': 'bold'}, svg, 'X');
+					ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt'}, svg, 'X');
 				}
 				if (rightFinger != 'x') {
 					ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'hanging', x: x + STRINGS_DISTANCE*i, y: y1 + (FRETS - 1)*FRETS_DISTANCE + 2 + FRETS_DISTANCE/4, 'font-size': '10pt', fill: '#555'}, svg, rightFinger);
 				}
 			}
-			ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x - STRINGS_DISTANCE/1, y: y1 + FRETS_DISTANCE/2 + 2 + 1, 'font-size': '11pt'}, svg, ROMANS[delta]);
+			ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x - STRINGS_DISTANCE - 2, y: y1 + firstPositionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2 + 1, 'font-size': '11pt'}, svg, ROMANS[firstPosition]);
 		}
 
 		if (dataDownload) {
