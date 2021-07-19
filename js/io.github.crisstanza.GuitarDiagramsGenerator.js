@@ -95,6 +95,15 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 
 			'C#/B': { '1': {'positions': 'x-2-x-1-2-x', 'leftHand': 'x-2-x-1-3-x', 'rightHand': 'x-P-x-I-M-x'} },
 			'A#m7(b5)': { '1': {'positions': '6-x-x-6-5-x', 'leftHand': '2-x-x-3-1-x', 'rightHand': 'P-x-x-I-M-x'} }
+		},
+
+		'o-homem-do-mar': {
+			'Em': { '1': {'positions': '0-2-2-0-0-x', 'leftHand': 'x-2-3-x-x-x', 'rightHand': 'P-x-I-M-A-x'} },
+			'Em7+/Eb': { '1': {'positions': 'x-x-1-0-0-0', 'leftHand': 'x-x-3-x-x-x', 'rightHand': 'x-x-P-I-M-A'} },
+			'F#': { '1': {'positions': '2-4-4-3-2-2', 'leftHand': '1-3-4-2-1-1', 'rightHand': 'P-x-I-M-A-x'} },
+			'F#m': { '1': {'positions': '2-4-4-2-2-2', 'leftHand': '1-3-4-1-1-1', 'rightHand': 'P-x-I-M-A-x'} },
+			'C#m': { '1': {'positions': '4-4-6-6-5-4', 'leftHand': '1-1-3-4-2-1', 'rightHand': 'x-P-I-M-A-x'} },
+			'A': { '1': {'positions': 'x-0-2-2-2-x', 'leftHand': 'x-x-2-3-4-x', 'rightHand': 'x-P-I-M-A-x'} },
 		}
 	};
 
@@ -158,7 +167,7 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 		if (dataPositions) {
 			let positions = dataPositions.split('-');
 			positions.length = STRINGS;
-			let higherPosition = positions.reduce(function(a, b) { return Math.max(a == 'x' ? 0 : a, b == 'x' ? 0 : b); });
+			let higherPosition = getHigherPosition(positions);
 			let delta = higherPosition >= FRETS ? higherPosition - FRETS + 1 : 0;
 			if (delta > 0) {
 				firstLine.remove();
@@ -169,24 +178,28 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 			let firstPosition = -1;
 			for (let i = 0 ; i < positions.length ; i++) {
 				let position = positions[i];
-				let positionIndex = (position == 'x' ? -1 : position - 1 - delta);
-				if (firstPositionIndex == -1 && position != 'x') {
-					firstPositionIndex = positionIndex;
-					firstPosition = position - 1;
-				}
-				let leftFinger = leftHand ? leftHand[i] : null;
-				let rightFinger = rightHand ? rightHand[i] : null;
-				if (position >= 0) {
-					if (position == 0) {
-						positionIndex = -1;
-						ElementsCreator.create.svg('circle', {cx: x + STRINGS_DISTANCE*i, cy: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2, r: STRINGS_DISTANCE/3, fill: '#EEE', stroke: 'black', 'stroke-width': 1}, svg)
-					} else if (positionIndex >= 0) {
-						ElementsCreator.create.svg('circle', {cx: x + STRINGS_DISTANCE*i, cy: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2, r: STRINGS_DISTANCE/2.5, fill: '#EEE', stroke: 'black', 'stroke-width': 1}, svg)
-						ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt'}, svg, leftFinger);
+				let positionsMultiString = position.split('');
+				for (let j = 0 ; j < positionsMultiString.length ; j++) {
+					position = positionsMultiString[j];
+					let positionIndex = (position == 'x' ? -1 : position - 1 - delta);
+					if (firstPositionIndex == -1 && position != 'x') {
+						firstPositionIndex = positionIndex;
+						firstPosition = position - 1;
 					}
-				} else if (position == 'x') {
-					ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt'}, svg, 'X');
+					if (position >= 0) {
+						if (position == 0) {
+							positionIndex = -1;
+							ElementsCreator.create.svg('circle', {cx: x + STRINGS_DISTANCE*i, cy: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2, r: STRINGS_DISTANCE/3, fill: '#EEE', stroke: 'black', 'stroke-width': 1}, svg)
+						} else if (positionIndex >= 0) {
+							let leftFinger = leftHand ? leftHand[i] : null;
+							ElementsCreator.create.svg('circle', {cx: x + STRINGS_DISTANCE*i, cy: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2, r: STRINGS_DISTANCE/2.5, fill: '#EEE', stroke: 'black', 'stroke-width': 1}, svg)
+							ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE + FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt'}, svg, leftFinger);
+						}
+					} else if (position == 'x') {
+						ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'middle', x: x + STRINGS_DISTANCE*i, y: y1 + positionIndex*FRETS_DISTANCE/2 + 2 + 2, 'font-size': '11pt'}, svg, 'X');
+					}
 				}
+				let rightFinger = rightHand ? rightHand[i] : null;
 				if (rightFinger != 'x') {
 					ElementsCreator.create.svg('text', {'text-anchor': 'middle', 'dominant-baseline': 'hanging', x: x + STRINGS_DISTANCE*i, y: y1 + (FRETS - 1)*FRETS_DISTANCE + 2 + FRETS_DISTANCE/4, 'font-size': '10pt', fill: '#555'}, svg, rightFinger);
 				}
@@ -215,6 +228,16 @@ if (!io.github.crisstanza.GuitarDiagramsGenerator) io.github.crisstanza.GuitarDi
 			downloadSvg.href = 'data:image/octet-stream;base64,' + btoa(svgData) ;
 			ElementsCreator.create(null, {}, downloadLinks, ' | ');
 		}
+	}
+
+	function getHigherPosition(positions) {
+		let allPositions = [];
+		for (let i = 0 ; i < positions.length ; i++) {
+			let position = positions[i];
+			let positionsMultiString = position.split('');
+			allPositions.push(...positionsMultiString);
+		}
+		return allPositions.reduce(function(a, b) { return Math.max(a == 'x' ? 0 : a, b == 'x' ? 0 : b); });
 	}
 
 	io.github.crisstanza.GuitarDiagramsGenerator.init = function(event) {
